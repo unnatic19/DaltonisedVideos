@@ -1,0 +1,51 @@
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Video Gallery</title>
+    <style>
+        body {
+            text-align: center;
+            background: url('/static/files/peakpx.jpg') fixed center;
+            background-size: cover;
+            margin: 0;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Add some margin to the h1 for spacing */
+        }
+
+        /* Style each video container */
+        div {
+            display: inline-block;
+            margin: 10px; /* Adjust margin as needed */
+            text-align: center; /* Center content within the video container */
+        }
+
+        video {
+            width: 520px;
+            height: 440px;
+            margin-bottom: 0; /* Remove margin bottom from video for precise alignment */
+        }
+
+        h2 {
+            margin: 0; /* Remove default margin from h2 */
+        }
+    </style>
+</head>
+<body>
+    <link rel="icon" href="data:;base64,=">
+    <h1>Result</h1>
+    <div>
+        {% for video in videos %}
+            <video controls>
+                <source src="{{ url_for('static', filename='files/' + video) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2>{{ titles[loop.index0] }}</h2>
+        {% endfor %}
+    </div>
+</body>
+</html>

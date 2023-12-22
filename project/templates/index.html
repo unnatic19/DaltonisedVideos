@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            
+            background: url('static/files/wallpaper.gif') fixed center;
+            background-size: cover;
+            margin: 0;
+            color: white;
+        }
+
+        img {
+            height: 100%;
+            width: 80%;
+           
+        }
+
+        input[type="submit"],input[type="file"] {
+            background-color: #9659ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="static/files/info.png">
+    <form method='POST' enctype='multipart/form-data'>
+        {{form.hidden_tag()}}
+        {{form.file()}}
+        {{form.submit()}}
+    </form>
+</body>
+
+</html>
